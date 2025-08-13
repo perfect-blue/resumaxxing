@@ -52,7 +52,16 @@ function createProject(project = {}) {
     const newProject = {
         id: project.id || crypto.randomUUID(),
         name: uniqueName,
-        lastModified: project.lastModified ? new Date(project.lastModified) : new Date()
+        lastModified: project.lastModified ? new Date(project.lastModified) : new Date(),
+        data: {
+            "fullname": null,
+            "email": null,
+            "phone": null,
+            "summary": null,
+            "experiences": [],
+            "educations": [],
+            "skills": [],
+        }
     };
 
     projects[newProject.id] = newProject;
@@ -147,3 +156,79 @@ init();
 document.getElementById("addProjectBtn").addEventListener("click", () => {
     createProject();
 });
+
+function loadProject(projectId) {
+    currentProjectId = projectId;
+    saveCurrentProjectId(projectId);
+    generatePreview(projectId);
+}
+
+
+function generatePreview(projectID){
+    const resumeHTML = generateResumeHTML(projects[projectID].data);
+
+    const range = document.createRange();
+    range.selectNode(document.getElementById('pagesContainer')); // reference point
+    const fragment = range.createContextualFragment(resumeHTML);
+
+    const container = document.getElementById('pagesContainer');
+    container.innerHTML = ''; // clear old preview
+    container.appendChild(fragment);
+}
+
+function generateResumeHTML(data) {
+    return `
+        <div class="resume-page">
+            <div class="page-number">Page 1</div>
+            <div class="resume-header">
+                <div class="resume-name">${data.fullName || 'Your Name'}</div>
+                <div class="resume-contact">
+                    ${data.email || 'email@example.com'} | 
+                    ${data.phone || '(555) 123-4567'}
+                </div>
+            </div>
+            
+            ${data.summary ? `
+            <div class="resume-section">
+                <h3>Professional Summary</h3>
+                <p>${data.summary}</p>
+            </div>
+            ` : ''}
+            
+            ${data.experience && data.experience.length > 0 ? `
+            <div class="resume-section">
+                <h3>Experience</h3>
+                ${data.experience.map(exp => `
+                    <div class="resume-item">
+                        <h4>${exp.title || ''}</h4>
+                        <div class="company">${exp.company || ''}</div>
+                        <div class="date">${exp.date || ''}</div>
+                        <p>${exp.description || ''}</p>
+                    </div>
+                `).join('')}
+            </div>
+            ` : ''}
+            
+            ${data.education && data.education.length > 0 ? `
+            <div class="resume-section">
+                <h3>Education</h3>
+                ${data.education.map(edu => `
+                    <div class="resume-item">
+                        <h4>${edu.degree || ''}</h4>
+                        <div class="company">${edu.school || ''}</div>
+                        <div class="date">${edu.date || ''}</div>
+                        <p>${edu.info || ''}</p>
+                    </div>
+                `).join('')}
+            </div>
+            ` : ''}
+            
+            ${data.skills ? `
+            <div class="resume-section">
+                <h3>Skills</h3>
+                <p>${data.skills}</p>
+            </div>
+            ` : ''}
+        </div>
+    `;
+}

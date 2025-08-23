@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    overflow-x: hidden;
+}
+
+.project-sidebar {
+    width: 20%;
+    background: #2c3e50;
+    color: white;
+    height: 100vh;
+    transition: transform 0.3s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+.project-sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.live-preview {
+    flex: 1;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.live-preview-sidebar-collapsed {
+    transform: translateX(-30%);
+}
+
+.sidebar-toggle-wrapper {
+    position: absolute;
+    top: 10px;
+    right: -50px;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.project-sidebar .sidebar-toggle-wrapper {
+    right: 10px;
+}
+
+.project-sidebar.collapsed .sidebar-toggle-wrapper {
+    right: -50px;
+}
+
+.sidebar-toggle-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateZ(0);
+}
+
+.editor-sidebar {
+    width: 30%;
+    background: #2c3e50;
+    color: white;
+    height: 100vh;
+    transition: transform 0.3s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+.editor-sidebar.collapsed {
+    transform: translateX(100%);
+}
+
+.editor-sidebar .sidebar-toggle-wrapper {
+    left: 10px;
+    right: auto;
+}
+
+.editor-sidebar.collapsed .sidebar-toggle-wrapper {
+    left: -50px;
+    right: auto;
+}
+
+.create-project-btn {
+    margin: 0 20px 20px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: calc(100% - 40px);
+}

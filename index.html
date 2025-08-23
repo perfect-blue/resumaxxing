@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Left Collapse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="project-sidebar" id="projectSidebar">
+        <div class="sidebar-toggle-wrapper">
+            <button class="sidebar-toggle-btn" id="projectToggleBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="project-content">
+            <h3>Project</h3>
+            <p>This content collapses to the left</p>
+            <ul>
+                <li>Project item 1</li>
+                <li>Project item 2</li>
+                <li>Project item 3</li>
+                <li>Project item 4</li>
+            </ul>
+        </div>
+        <button class="create-project-btn">Create Project</button>
+    </div>
+
+    <div class="live-preview" id="livePreview">
+        <h1>Main Content</h1>
+        <p>Click the buttons to collapse the sidebars.</p>
+    </div>
+
+    <div class="editor-sidebar" id="editorSidebar">
+        <div class="sidebar-toggle-wrapper">
+            <button class="sidebar-toggle-btn" id="editorToggleBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="editor-content">
+            <h3>Editor</h3>
+            <p>This content collapses to the left</p>
+            <ul>
+                <li>Editor item 1</li>
+                <li>Editor item 2</li>
+                <li>Editor item 3</li>
+                <li>Editor item 4</li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

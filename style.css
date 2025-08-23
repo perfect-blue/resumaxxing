@@ -115,24 +115,22 @@ textarea:focus {
 }
 
 .project-sidebar.collapsed .sidebar-toggle-wrapper {
-    right: -50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateX(150%);
 }
-
+/* Sidebar Header */
 .sidebar-header {
     padding: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
-}
-
-.sidebar-header h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .project-content {
     padding: 20px;
+    padding-top: 80px;
     flex: 1;
     overflow-y: auto;
 }
@@ -176,6 +174,7 @@ textarea:focus {
     margin-top: 10px !important;
 }
 
+/* Project Edit Button */
 .project-edit-btn {
     background: transparent;
     color: #e74c3c;
@@ -193,6 +192,7 @@ textarea:focus {
 
 .project-edit-btn:hover {
     background-color: rgba(231, 76, 60, 0.2);
+    transform: scale(1.1);
 }
 
 .sidebar-footer {
@@ -243,6 +243,11 @@ textarea:focus {
     /* Prevent subpixel rendering issues */
     -webkit-font-smoothing: antialiased;
     position: relative;
+    overflow-y: auto;
+}
+
+.editor-content {
+    padding: 20px;
 }
 
 .editor-sidebar.collapsed {
@@ -329,6 +334,39 @@ textarea:focus {
     font-weight: bold;
     min-width: 60px;
     text-align: center;
+}
+
+/* ===== FORM STYLES ===== */
+.form-section {
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #ecf0f1;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ecf0f1;
+    font-size: 0.95rem;
+}
+
+.form-group textarea {
+    min-height: 80px;
+    resize: vertical;
 }
 
 /* ===== RESUME CONTENT ===== */

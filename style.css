@@ -293,7 +293,6 @@ textarea:focus {
 .resume-section p {
     line-height: 1.15;
     color: #555;
-    /* margin-bottom: 8px; */
 }
 
 /* Optimized Contenteditable Styles */
@@ -338,4 +337,118 @@ textarea:focus {
 .editing * {
     animation-duration: 0s !important;
     transition-duration: 0s !important;
+}
+
+/* ===== EXPERIENCE AND SECTION MANAGEMENT ===== */
+.experience-item, .education-item, .skill-item, .project-item {
+    position: relative;
+    /* margin-bottom: 20px;
+    padding: 15px; */
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.experience-item:hover, .education-item:hover, .skill-item:hover, .project-item:hover {
+    background-color: rgba(0, 123, 255, 0.02);
+    border-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Add Item Button - Circular with + */
+.add-item-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #27ae60;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.3);
+    float: right;
+    clear: both;
+}
+
+.add-item-btn:hover {
+    background: #2ecc71;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+}
+
+.add-item-btn:active {
+    transform: scale(0.95);
+}
+
+/* Delete Item Button */
+.delete-item-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.experience-item:hover .delete-item-btn,
+.education-item:hover .delete-item-btn,
+.skill-item:hover .delete-item-btn,
+.project-item:hover .delete-item-btn {
+    display: flex;
+}
+
+.delete-item-btn:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Section Header with Delete Button */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.delete-section-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.delete-section-btn:hover {
+    background: #c0392b;
+    transform: translateY(-1px);
+}
+
+/* Fixed section titles */
+.fixed-section-title {
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Clear floats */
+.resume-section::after {
+    content: "";
+    display: table;
+    clear: both;
 }

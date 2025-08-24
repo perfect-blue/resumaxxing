@@ -8,115 +8,93 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <div class="project-sidebar" id="projectSidebar">
+    <!-- <div class="project-sidebar" id="projectSidebar">
         <div class="sidebar-toggle-wrapper">
             <button class="sidebar-toggle-btn" id="projectToggleBtn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        <div class="project-content">
-            <div class="project-list">
-                <div class="project-item">
-                    <div class="project-item-header">
-                        <h4>Project 1</h4>
-                        <button class="project-edit-btn"><i class="fas fa-trash"></i></button>
-                    </div>
-                    <p>Modified: 8/12/2025</p>
-                </div>
-                <div class="project-item">
-                    <div class="project-item-header">
-                        <h4>Project 1</h4>
-                        <button class="project-edit-btn"><i class="fas fa-trash"></i></button>
-                    </div>
-                    <p>Modified: 8/12/2025</p>
-                </div>
-            </div>
-        </div>
+        <div class="project-content"></div>
         <button class="create-project-btn">Create Project</button>
-    </div>
+    </div> -->
 
     <div class="live-preview" id="livePreview">
         <div class="preview-container">
             <div class="a4-paper" id="a4Paper">
-                <h2>Resume Preview</h2>
-                <div class="resume-section">
-                    <h3>John Doe</h3>
-                    <p>Software Engineer</p>
-                    <p>john.doe@example.com | (123) 456-7890</p>
+                <div class="resume-section" id="personal-section">
+                    <h3 contenteditable="true" class="editable" data-single-line="true">John Doe</h3>
+                    <p contenteditable="true" class="editable" data-single-line="true" style="font-size: 1.2em; color: #007bff; font-weight: 500;">Senior Software Engineer</p>
+                    <p contenteditable="true" class="editable" data-single-line="true">john.doe@example.com | (555) 123-4567 | LinkedIn: /in/johndoe | San Francisco, CA</p>
                 </div>
-                <div class="resume-section">
-                    <h4>Experience</h4>
-                    <p><strong>Senior Developer</strong> - Tech Company (2018-Present)</p>
-                    <p>Led development of key features for the company's main product.</p>
-                    <p><strong>Junior Developer</strong> - Startup Inc. (2015-2018)</p>
-                    <p>Worked on frontend development using React and Angular.</p>
-                </div>
-                <div class="resume-section">
-                    <h4>Education</h4>
-                    <p><strong>BS in Computer Science</strong> - University Name (2011-2015)</p>
-                </div>
-                <div class="resume-section">
-                    <h4>Skills</h4>
-                    <p>JavaScript, React, Node.js, Python, CSS, HTML</p>
-                </div>
-            </div>
-        </div>
-        <div class="preview-controls">
-            <button id="zoomOutBtn" class="zoom-btn"><i class="fas fa-search-minus"></i></button>
-            <span id="zoomLevel">100%</span>
-            <button id="zoomInBtn" class="zoom-btn"><i class="fas fa-search-plus"></i></button>
-        </div>
-        
-    </div>
 
-    <div class="editor-sidebar" id="editorSidebar">
-        <!-- <div class="sidebar-toggle-wrapper">
-            <button class="sidebar-toggle-btn" id="editorToggleBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div> -->
-        <div class="editor-content">
-            <div class="content">
-                <div class="form-section">
-                    <h3>Personal Information</h3>
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" placeholder="John Doe" autocomplete="off" spellcheck="false">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="john.doe@email.com" autocomplete="off" spellcheck="false">
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" placeholder="+1 (555) 123-4567" autocomplete="off" spellcheck="false">
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="summary">Professional Summary</label>
-                        <textarea id="summary" placeholder="Brief summary of your professional background..." spellcheck="false"></textarea>
-                    </div>
+                <div class="resume-section" id="summary-section">
+                    <h4>Professional Summary</h4>
+                    <p contenteditable="true" class="editable">Experienced software engineer with 8+ years developing scalable web applications. Expertise in React, Node.js, and cloud technologies. Led teams of 5+ engineers and delivered products serving millions of users. Passionate about clean code, performance optimization, and mentoring junior developers.</p>
                 </div>
-    
-                <div class="form-section">
-                    <h3>Experience</h3>
-                    <div id="experienceList"></div>
-                    <button class="add-btn" onclick="addExperience()">+ Add Experience</button>
+
+                <div class="resume-section" id="experience-section">
+                    <h4>Experience</h4>
+                    <div class="experience-items">
+                        <div class="experience-item">
+                            <p contenteditable="true" class="editable"><strong>Senior Software Engineer</strong> - TechCorp Inc. (2020-Present)</p>
+                            <p contenteditable="true" class="editable">• Led development of React-based dashboard serving 2M+ daily users</p>
+                            <p contenteditable="true" class="editable">• Improved application performance by 40% through code optimization and caching</p>
+                            <p contenteditable="true" class="editable">• Mentored 3 junior developers and established coding best practices</p>
+                            <p contenteditable="true" class="editable">• Collaborated with product team to define technical requirements</p>
+                        </div>
+                        <div class="experience-item">
+                            <p contenteditable="true" class="editable"><strong>Software Engineer</strong> - StartupXYZ (2018-2020)</p>
+                            <p contenteditable="true" class="editable">• Built full-stack applications using React, Node.js, and PostgreSQL</p>
+                            <p contenteditable="true" class="editable">• Implemented CI/CD pipelines reducing deployment time by 60%</p>
+                            <p contenteditable="true" class="editable">• Developed RESTful APIs handling 10K+ requests per minute</p>
+                        </div>
+                        <div class="experience-item">
+                            <p contenteditable="true" class="editable"><strong>Junior Developer</strong> - WebSolutions LLC (2016-2018)</p>
+                            <p contenteditable="true" class="editable">• Created responsive websites using HTML5, CSS3, and JavaScript</p>
+                            <p contenteditable="true" class="editable">• Worked with design team to implement pixel-perfect interfaces</p>
+                            <p contenteditable="true" class="editable">• Maintained legacy codebases and fixed critical bugs</p>
+                        </div>
+                    </div>
+                    <button class="add-item-btn mobile-only" onclick="addExperienceItem()">+ Add Experience</button>
                 </div>
-    
-                <div class="form-section">
-                    <h3>Education</h3>
-                    <div id="educationList"></div>
-                    <button class="add-btn" onclick="addEducation()">+ Add Education</button>
+
+                <div class="resume-section" id="education-section">
+                    <div class="section-header">
+                        <h4>Education</h4>
+                        <button class="delete-section-btn mobile-only" onclick="deleteSection('education-section')">Delete Section</button>
+                    </div>
+                    <div class="education-items">
+                        <div class="education-item">
+                            <p contenteditable="true" class="editable"><strong>Bachelor of Science in Computer Science</strong> - University of California, Berkeley (2012-2016)</p>
+                            <p contenteditable="true" class="editable">• Graduated Magna Cum Laude (GPA: 3.8/4.0)</p>
+                            <p contenteditable="true" class="editable">• Relevant Coursework: Data Structures, Algorithms, Database Systems, Software Engineering</p>
+                        </div>
+                    </div>
+                    <button class="add-item-btn mobile-only" onclick="addEducationItem()">+ Add Education</button>
                 </div>
-    
-                <div class="form-section">
-                    <h3>Skills</h3>
-                    <div class="form-group">
-                        <label>Skills (comma separated)</label>
-                        <textarea id="skills" placeholder="JavaScript, Python, React, Node.js..."></textarea>
+
+                <div class="resume-section" id="skills-section">
+                    <h4>Technical Skills</h4>
+                    <p contenteditable="true" class="editable"><strong>Languages:</strong> JavaScript, TypeScript, Python, Java, SQL</p>
+                    <p contenteditable="true" class="editable"><strong>Frontend:</strong> React, Vue.js, HTML5, CSS3, Sass, Tailwind CSS</p>
+                    <p contenteditable="true" class="editable"><strong>Backend:</strong> Node.js, Express, Django, Flask, GraphQL</p>
+                    <p contenteditable="true" class="editable"><strong>Database:</strong> PostgreSQL, MongoDB, Redis, MySQL</p>
+                    <p contenteditable="true" class="editable"><strong>Tools:</strong> Git, Docker, Kubernetes, AWS, Jenkins, Webpack</p>
+                </div>
+
+                <div class="resume-section" id="projects-section">
+                    <h4>Key Projects</h4>
+                    <div class="experience-item">
+                        <p contenteditable="true" class="editable"><strong>E-commerce Platform</strong> - Personal Project</p>
+                        <p contenteditable="true" class="editable">• Built full-stack e-commerce platform with React, Node.js, and Stripe integration</p>
+                        <p contenteditable="true" class="editable">• Implemented real-time inventory management and order tracking</p>
+                        <p contenteditable="true" class="editable">• Deployed on AWS with auto-scaling and load balancing</p>
+                    </div>
+                    <div class="experience-item">
+                        <p contenteditable="true" class="editable"><strong>Data Visualization Dashboard</strong> - Open Source</p>
+                        <p contenteditable="true" class="editable">• Created interactive dashboard using D3.js and React</p>
+                        <p contenteditable="true" class="editable">• Processes and visualizes large datasets (100K+ records)</p>
+                        <p contenteditable="true" class="editable">• 500+ GitHub stars and active community contributions</p>
                     </div>
                 </div>
             </div>
